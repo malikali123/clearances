@@ -27,7 +27,7 @@ class TransactionController extends Controller
     public function index()
     {
         //admin.bank
-        $transactions = Transacsions::with('values','import')->get();
+        $transactions = Transacsions::with('values','imports')->get();
         return $transactions;
         return view('pages.Accounts.index', compact('transactions'));
     }

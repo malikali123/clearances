@@ -30,7 +30,7 @@ class Transacsions extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function import()
+    public function imports()
     {
         return $this->belongsTo(Import::class, 'import_id', 'id');
     }
@@ -52,7 +52,7 @@ class Transacsions extends Model
 
     public function getAmountAttribute($amount){
 
-        $amount= $this->import->price * $this->import->value->value / 100;
+        $amount= $this->imports->price * $this->imports->value->value / 100;
         return $amount;
 
     }

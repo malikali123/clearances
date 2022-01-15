@@ -52,7 +52,7 @@ class Transacsions extends Model
 
     public function getAmountAttribute($amount){
 
-        $amount= $this->values->product_code * $this->imports->price/100;
+        $amount= $this->imports->price * $this->imports->value->value / 100;
         return $amount;
 
     }

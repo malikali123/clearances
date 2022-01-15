@@ -63,7 +63,7 @@ class ImportController extends Controller
     public function store(Request $request)
     {
 
-      // return $request;
+    //   return $request;
 DB::beginTransaction();
 
 
@@ -78,7 +78,7 @@ DB::beginTransaction();
 
 
         DB::commit();
-        return redirect()->route('admin.Imports')->with(['success' => 'تم ألتحديث بنجاح']);
+        return redirect()->route('admin.import')->with(['success' => 'تم ألتحديث بنجاح']);
 
         //return toastr()->success(trans('messages.success'));
         //return redirect()->route('admin.bank');

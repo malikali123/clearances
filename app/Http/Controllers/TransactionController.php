@@ -27,9 +27,9 @@ class TransactionController extends Controller
     public function index()
     {
         //admin.bank
-        $account = Transacsions::get();
-        return $account;
-        return view('pages.Accounts.index', compact('account'));
+        $transactions = Transacsions::with('values','imports')->get();
+        return $transactions;
+        return view('pages.Accounts.index', compact('transactions'));
     }
 
     /**
@@ -71,6 +71,7 @@ class TransactionController extends Controller
        //return $request;
 DB::beginTransaction();
 
+        // return $request->all();
 
         $transaction = Transacsions::create([
             'import_id' => $request->product_type,
@@ -86,7 +87,7 @@ DB::beginTransaction();
     //    $data =  $transaction->amount = values->product_type * imports->price/100;
       //  'amount' => $request->product_type * $request-> type/100 ,
 ///return $data;
-        return redirect()->route('admin.account')->with(['success' => 'تم ألتحديث بنجاح']);
+        return redirect()->route('admin.transactions')->with(['success' => 'تم ألتحديث بنجاح']);
 
         //return toastr()->success(trans('messages.success'));
         //return redirect()->route('admin.bank');

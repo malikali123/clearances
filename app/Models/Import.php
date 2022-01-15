@@ -8,6 +8,8 @@ class Import extends Model
 {
     protected $table = 'imports';
 
+    protected $with = ['value'];
+
     protected $fillable = [
         'value_id', 'decription', 'quantity', 'price', 'clearance_id',
 

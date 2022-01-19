@@ -49,7 +49,7 @@ class Account extends Model
      */
     public function transactions()
     {
-        return $this->hasMany(Transaction::class, 'bank_id', 'id');
+        return $this->hasMany(Transacsions::class, 'bank_id', 'id');
     }
 
 }

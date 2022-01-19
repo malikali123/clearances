@@ -19,8 +19,8 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::STUDENT);
         }
 
-        if (auth('teacher')->check()) {
-            return redirect(RouteServiceProvider::TEACHER);
+        if (auth('clearance')->check()) {
+            return redirect(RouteServiceProvider::CLEARANCE);
         }
 
         if (auth('parent')->check()) {

@@ -53,22 +53,27 @@
                                 <input type="number" required value="" name="account_number" class="form-control">
                             </div>
 
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4"> اختر صاحب الحساب
-                                </label>
-                                <select name="clearance" class="select2 form-control">
-                                    <optgroup label="من فضلك أختر صاحب الحساب ">
-                                        @if($data && $data -> count() > 0)
-                                            @foreach($data as $clearance)
-                                                <option
-                                                    value="{{$clearance -> id }}">{{$clearance -> name}}</option>
-                                            @endforeach
-                                        @endif
-                                    </optgroup>
-                                </select>
+{{--                            <div class="form-group col-md-6">--}}
+{{--                                <label for="inputEmail4"> اختر صاحب الحساب--}}
+{{--                                </label>--}}
+{{--                                <select name="clearance" class="select2 form-control">--}}
+{{--                                    <optgroup label="من فضلك أختر صاحب الحساب ">--}}
+{{--                                        @if($data && $data -> count() > 0)--}}
+{{--                                            @foreach($data as $clearance)--}}
+{{--                                                <option--}}
+{{--                                                    value="{{$clearance -> id }}">{{$clearance -> name}}</option>--}}
+{{--                                            @endforeach--}}
+{{--                                        @endif--}}
+{{--                                    </optgroup>--}}
+{{--                                </select>--}}
 
 
-                            </div>
+{{--                            </div>--}}
+
+
+                                <input type="number" hidden required value="{{auth()->user()->id}}" name="clearance" class="form-control">
+
+
 
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">الرصيد الافتتاحي </label>

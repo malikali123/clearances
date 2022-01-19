@@ -47,9 +47,9 @@ return [
             'provider' => 'students',
         ],
 
-        'teacher' => [
+        'clearance' => [
             'driver' => 'session',
-            'provider' => 'teachers',
+            'provider' => 'clearance',
         ],
 
         'parent' => [
@@ -94,9 +94,9 @@ return [
             'model' => App\Models\Student::class,
         ],
 
-        'teachers' => [
+        'clearance' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Teacher::class,
+            'model' => App\Models\Clearance::class,
         ],
 
         'my__parents' => [

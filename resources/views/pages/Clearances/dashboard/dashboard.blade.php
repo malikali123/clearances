@@ -41,7 +41,7 @@
             <div class="page-title" >
                 <div class="row">
                     <div class="col-sm-6" >
-                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">لوحة تحكم المدير</h4>
+                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">لوحة تحكم المخلص</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
@@ -51,47 +51,7 @@
             </div>
             <!-- widgets -->
             <div class="row" >
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
-                    <div class="card card-statistics h-100">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <span class="text-success">
-                                        <i class="far fa-treasure-chest highlight-icon" aria-hidden="true"></i>
-{{--                                        <i class="far fa-treasure-chest"></i>--}}
-                                    </span>
-                                </div>
-                                <div class="float-right text-right">
-                                    <p class="card-text text-dark"> الخزينه</p>
-                                    <h4>{{ \App\Models\Transacsions::whereNotNull('amount')->sum('amount') }}</h4>
-                                </div>
-                            </div>
-                            <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span class="text-danger">عرض البيانات</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
-                    <div class="card card-statistics h-100">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <span class="text-warning">
-                                        <i class="fas fa-chalkboard-teacher highlight-icon" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div class="float-right text-right">
-                                    <p class="card-text text-dark">عدد المخلصين</p>
-                                    <h4>{{ \App\Models\Clearance::count() }}</h4>
-                                </div>
-                            </div>
-                            <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span class="text-danger">عرض البيانات</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
                     <div class="card card-statistics h-100">
                         <div class="card-body">
@@ -102,11 +62,12 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">المستخدمين</p>
-                                    <h4>{{ \App\User::count() }}</h4>
+                                    <p class="card-text text-dark">بضائع تم تخليصها </p>
+                                    <h4>{{\App\Models\My_Parent::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
+{{--                                {{route('add_parent')}}--}}
                                 <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span class="text-danger">عرض البيانات</span></a>
                             </p>
                         </div>
@@ -122,11 +83,12 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">احصائيات شهادات الوارد</p>
-                                    <h4>{{ \App\Models\Import::where(['status' => 1 ])->count('status') }}</h4>
+                                    <p class="card-text text-dark"> المدفوعات </p>
+                                    <h4>{{\App\Models\Section::count()}}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
+{{--                                {{route('Sections.index')}}--}}
                                 <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span class="text-danger">عرض البيانات</span></a>
                             </p>
                         </div>
@@ -136,7 +98,57 @@
             <!-- Orders Status widgets-->
 
 
+            <div class="row">
 
+                <div  style="height: 400px;" class="col-xl-12 mb-30">
+                    <div class="card card-statistics h-100">
+                        <div class="card-body">
+                            <div class="tab nav-border" style="position: relative;">
+                                <div class="d-block d-md-flex justify-content-between">
+                                    <div class="d-block w-100">
+                                        <h5 style="font-family: 'Cairo', sans-serif" class="card-title">اخر العمليات علي النظام</h5>
+                                    </div>
+                                    <div class="d-block d-md-flex nav-tabs-custom">
+                                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="students-tab" data-toggle="tab"
+                                                   href="#students" role="tab" aria-controls="students"
+                                                   aria-selected="true"> الطلاب</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teachers"
+                                                   role="tab" aria-controls="teachers" aria-selected="false">المعلمين
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parents"
+                                                   role="tab" aria-controls="parents" aria-selected="false">اولياء الامور
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoices"
+                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">الفواتير
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <livewire:calendar />
+
+            <!--=================================
+ wrapper -->
 
             <!--=================================
  footer -->
@@ -144,7 +156,7 @@
             @include('layouts.footer')
         </div><!-- main content wrapper end-->
     </div>
-{{--    </div>--}}
+    </div>
     </div>
 
     <!--=================================

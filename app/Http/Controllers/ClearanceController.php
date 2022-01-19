@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Clearance;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 
 class ClearanceController extends Controller
@@ -66,6 +67,8 @@ DB::beginTransaction();
             'phon' => $request->phon,
             'email' => $request->email,
             'clearaneNumber' => $request->clearaneNumber,
+            'password' => Hash::make($request->Password),
+
 
         ]);
 

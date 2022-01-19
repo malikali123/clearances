@@ -3,26 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Clearance extends Model
+class Clearance extends Authenticatable
 {
     protected $table = 'clearances';
 
     protected $fillable = [
-        'name', 'phon', 'email', 'clearaneNumber',
+        'name', 'phon', 'email', 'clearaneNumber', 'password',
 
 
     ];
 
-    /**
-     * $type
-     * define the using place of this account .
-     */
 
-    public static $type = [
-        'system' => 2,
-        'main' => 1
-    ];
 
 
     /**

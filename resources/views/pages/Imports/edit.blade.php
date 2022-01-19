@@ -33,9 +33,27 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4"> نوع البضاعه </label>
-                                <input type="text" value="{{$data->type}}" name="type" class="form-control">
+                                <label for="inputEmail4"> اختر نوع البضاعه
+                                </label>
+                                <select name="value_id" class="select2 form-control">
+                                    <optgroup label="من فضلك أختر صاحب الحساب ">
+                                        @if($values && $values -> count() > 0)
+                                            @foreach($values as $value)
+                                                <option
+                                                    value="{{$value -> id }}">{{$value->product_type}}</option>
+                                            @endforeach
+                                        @endif
+                                    </optgroup>
+                                </select>
+
+
                             </div>
+
+
+                            {{--                            <div class="form-group col-md-6">--}}
+{{--                                <label for="inputEmail4"> نوع البضاعه </label>--}}
+{{--                                <input type="text" value="{{$data->type}}" name="type" class="form-control">--}}
+{{--                            </div>--}}
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">وصف البضاعه </label>
                                 <input type="text" value="{{$data->decription}}" name="decription" class="form-control">
@@ -55,25 +73,28 @@
                             {{--                                <input type="text" value="" name="clearance" class="form-control">--}}
                             {{--                            </div>--}}
 
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4"> اختر االمخلص
-                                </label>
-                                <select name="clearance" class="select2 form-control">
-                                    <optgroup label="من فضلك أختر المخلص ">
-                                        @if($clearance && $clearance -> count() > 0)
-                                            @foreach($clearance as $clearanc)
-                                                <option
-                                                    value="{{$clearanc -> id }}">{{$clearanc -> name}}</option>
-                                            @endforeach
-                                        @endif
-                                    </optgroup>
-                                </select>
-                                {{--                                    @error('parent_id')--}}
-                                {{--                                    <span class="text-danger"> {{$message}}</span>--}}
-                                {{--                                    @enderror--}}
+                            <input type="number" hidden readonly value="{{auth()->user()->id }}" name="clearance" class="form-control">
 
 
-                            </div>
+{{--                            <div class="form-group col-md-6">--}}
+{{--                                <label for="inputEmail4"> اختر االمخلص--}}
+{{--                                </label>--}}
+{{--                                <select name="clearance" class="select2 form-control">--}}
+{{--                                    <optgroup label="من فضلك أختر المخلص ">--}}
+{{--                                        @if($clearance && $clearance -> count() > 0)--}}
+{{--                                            @foreach($clearance as $clearanc)--}}
+{{--                                                <option--}}
+{{--                                                    value="{{$clearanc -> id }}">{{$clearanc -> name}}</option>--}}
+{{--                                            @endforeach--}}
+{{--                                        @endif--}}
+{{--                                    </optgroup>--}}
+{{--                                </select>--}}
+{{--                                --}}{{--                                    @error('parent_id')--}}
+{{--                                --}}{{--                                    <span class="text-danger"> {{$message}}</span>--}}
+{{--                                --}}{{--                                    @enderror--}}
+
+
+{{--                            </div>--}}
 
 
                         </div>

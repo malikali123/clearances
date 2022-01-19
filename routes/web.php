@@ -122,6 +122,7 @@ Route::group(
         Route::get('print', 'TransactionController@print')->name('transactions.print');
         Route::post('store', 'TransactionController@store')->name('transactions.store');
         Route::get('edit/{id}', 'TransactionController@edit')->name('transactions.edit');
+        Route::get('payment/{id}', 'TransactionController@edit')->name('transactions.payment');
         Route::post('update/{value}', 'TransactionController@update')->name('transactions.update');
         Route::get('delete/{id}', 'TransactionController@delete')->name('transactions.delete');
 

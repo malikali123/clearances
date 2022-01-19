@@ -127,8 +127,8 @@ header start-->
                 <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
                 @if(auth('student')->check())
                     <form method="GET" action="{{ route('logout','student') }}">
-                        @elseif(auth('teacher')->check())
-                            <form method="GET" action="{{ route('logout','teacher') }}">
+                        @elseif(auth('clearance')->check())
+                            <form method="GET" action="{{ route('logout','clearance') }}">
                                 @elseif(auth('parent')->check())
                                     <form method="GET" action="{{ route('logout','parent') }}">
                                         @else

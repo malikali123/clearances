@@ -184,7 +184,7 @@
 <script src="{{asset('assets/admin/vendors/js/charts/chart.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/vendors/js/charts/echarts/echarts.js')}}" type="text/javascript"></script>
 
-<script src="{{asset('assets/admin/vendors/js/extensions/datedropper.min.j}" ts')}ype="text/javascript"></script>
+<script src="{{asset('assets/admin/vendors/js/extensions/datedropper.min.j}" ts')}} type="text/javascript"></script>
 <script src="{{asset('assets/admin/vendors/js/extensions/timedropper.min.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('assets/admin/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>

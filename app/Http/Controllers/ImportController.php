@@ -23,8 +23,10 @@ class ImportController extends Controller
     public function index()
     {
         //admin.bank
-        $data = Import::get();
-       // return $data;
+        $data = Import::where([
+            'clearance_id' => auth()->user()->id
+        ])->get();
+        //return $data;
         return view('pages.Imports.index', compact('data'));
     }
 
@@ -47,6 +49,7 @@ class ImportController extends Controller
      */
     public function create()
     {
+
         $values = Value::all();
         //return $values->value()->id;
         $data=Clearance::all();
@@ -72,13 +75,15 @@ DB::beginTransaction();
             'decription' => $request->description,
             'quantity' => $request->quantity,
             'price' => $request->price,
+           // 'status' => 0,
+            'total' => $request->price * $request->quantity,
             'clearance_id' => $request->clearance,
 
         ]);
 
 
         DB::commit();
-        return redirect()->route('admin.Imports')->with(['success' => 'تم ألتحديث بنجاح']);
+        return redirect()->route('admin.import')->with(['success' => 'تم ألتحديث بنجاح']);
 
         //return toastr()->success(trans('messages.success'));
         //return redirect()->route('admin.bank');
@@ -103,10 +108,10 @@ DB::beginTransaction();
      */
     public function edit($id)
     {
-        $clearance = Clearance::all();
+        $values = Value::all();
 
         $data = Import::find($id);
-        return view('pages.Imports.edit', compact('data','clearance'));
+        return view('pages.Imports.edit', compact('data','values'));
     }
 
     /**

@@ -26,21 +26,31 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //admin.bank
-        $account = Transacsions::get();
-        return $account;
-        return view('pages.Accounts.index', compact('account'));
+
+        $transactions = Transacsions::get();
+        return $transactions;
+        return view('pages.Accounts.index', compact('transactions'));
+
+//        //admin.bank
+//        $account = Transacsions::get();
+//        return $account;
+//        return view('pages.Accounts.index', compact('account'));
     }
+
+
+
+
+
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function print()
+    public function print($id)
     {
-        $account = Account::all();
-        return view('pages.bank.index', compact('account'));
+        $data = Import::find($id);
+        return view('pages.imports.details', compact('data'));
     }
 
     /**
@@ -68,19 +78,35 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
 
-       //return $request;
+      // return $request;
 DB::beginTransaction();
 
-
-        $transaction = Transacsions::create([
-            'import_id' => $request->product_type,
-            'clearance_id' => $request->name,
+        $status = Import::find($request->import_id);
+        $blance = Account::find($request->account_number);
+//return $d;
+           $transaction = Transacsions::create([
+            'import_id' => $request->import_id,
+            'clearance_id' => $request->clearance,
             'account_id' => $request->account_number,
 //            'value_id' => $request->type,
-            'amount' => 0 ,
-            'statement' => $request->description,
+            'amount' => $request->amount ,
+            'statement' => $request->decription,
 
         ]);
+
+        $blance->update([
+            'balance' => $blance->balance - $request->amount
+        ]);
+
+        $status->update([
+            'status' => 1,
+            'amount' => $request->amount
+        ]);
+
+
+
+
+
         DB::commit();
         // Transaction::get(values, imports);
     //    $data =  $transaction->amount = values->product_type * imports->price/100;
@@ -118,6 +144,23 @@ DB::beginTransaction();
         $account = Account::find($id);
         return view('pages.Accounts.edit', compact('bank','account', 'data'));
     }
+
+
+
+    public function payment($id)
+    {
+
+        $import = Import::find($id) ;
+        $account = Account::where([
+            'clearance_id' => auth()->user()->id
+        ])->get();
+//        $transaction = Transacsions::where([
+//            'import_id' => auth()->user()->id
+//        ])->get();
+        //return $account;
+        return view('pages.Transactions.payment', compact('import', 'account'));
+ }
+
 
     /**
      * Update the specified resource in storage.

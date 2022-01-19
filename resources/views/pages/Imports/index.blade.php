@@ -38,6 +38,8 @@
                                             <th>الكميه </th>
                                             <th> السعر </th>
                                             <th> اسم المخلص </th>
+                                            <th> اجمالي المبلغ </th>
+                                            <th>  الحاله </th>
                                             <th> العمليات </th>
 
                                         </tr>
@@ -53,18 +55,34 @@
                                                 <td>{{$imports->quantity}}</td>
                                                 <td>{{$imports->price}}</td>
                                                 <td>{{$imports->clearance->name}}</td>
+                                                <td>{{$imports->total}}</td>
+                                                <td class="alert {{ $imports -> status == 1 ? 'alert-success' : 'alert-danger' }}" >{{$imports -> getStatus()}}</td>
+
+{{--                                                <td>{{$imports->status}}</td>--}}
                                                 <td>
 {{--                                                    {{route('admin.maincategories.edit',$bank -> id)}}--}}
                                                     <div class="btn-group" role="group"
                                                          aria-label="Basic example">
+
+                                                        @if ($imports -> status > 0)
+                                                            <a href="{{route('transactions.print', $imports -> id)}}"
+                                                               class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">عرض التفاصيل</a>
+
+                                                        @else
+
+                                                        <a href="{{route('transactions.payment', $imports -> id)}}"
+                                                           class="btn btn-outline-success btn-min-width box-shadow-3 mr-1 mb-1">دفع</a>
+
                                                         <a href="{{route('import.edit', $imports -> id)}}"
                                                            class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
-{{--                                                        {{route('admin.maincategories.delete',$category -> id)}}--}}
+{{--
+
+                                                                                                                   {{route('admin.maincategories.delete',$category -> id)}}--}}
 
                                                         <a href="{{route('import.delete', $imports-> id)}}"
                                                            class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
 
-
+                                                        @endif
 
                                                     </div>
                                                 </td>

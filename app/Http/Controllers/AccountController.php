@@ -24,8 +24,13 @@ class AccountController extends Controller
     public function index()
     {
         //admin.bank
-        $account = Account::get();
-        //return $account;
+
+        $account = Account::where([
+            'clearance_id' => auth()->user()->id
+        ])->get();
+
+       // $account = Account::get();
+       // return $account;
         return view('pages.Accounts.index', compact('account'));
     }
 

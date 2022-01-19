@@ -29,23 +29,6 @@
         </li>
 
 
-{{--البضائع او الواردات--}}
-
-        <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Imports-menu">
-                <div class="pull-left"><i class="fas fa-container-storage"></i><span
-                        class="right-nav-text">الواردات</span></div>
-                <div class="pull-right"><i class="ti-plus"></i></div>
-                <div class="clearfix"></div>
-            </a>
-            <ul id="Imports-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('admin.import')}}">  عرض الواردات </a> </li>
-                <li> <a href="{{route('import.create')}}"> اضافة واردات جديد  </a> </li>
-
-            </ul>
-        </li>
-
-
         {{--البنوك--}}
 
         <li>
@@ -64,21 +47,6 @@
 
 
 
-
-{{--الحسابات--}}
-        <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Accounts-menu">
-                <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
-                        class="right-nav-text">الحسابات</span></div>
-                <div class="pull-right"><i class="ti-plus"></i></div>
-                <div class="clearfix"></div>
-            </a>
-            <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('admin.account')}}">  عرض الحسابات </a> </li>
-                <li> <a href="{{route('account.create')}}"> اضافة حساب جديد </a> </li>
-
-            </ul>
-        </li>
 
         {{--
   ادخال وعرض النسب المئوية لاسعار الواردات

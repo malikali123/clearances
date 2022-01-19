@@ -21,9 +21,9 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('import.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة واردات جديد</a>
-                                <a target="_blank" href="{{route('import.print')}}" class="btn btn-outline-success float-right">طباعة <i class="la la-print"></i> </a>
+{{--                                <a href="{{route('import.create')}}" class="btn btn-success btn-sm" role="button"--}}
+{{--                                   aria-pressed="true">اضافة واردات جديد</a>--}}
+{{--                                <a target="_blank" href="{{route('import.print')}}" class="btn btn-outline-success float-right">طباعة <i class="la la-print"></i> </a>--}}
 
                                 <br><br>
                                 <div class="table-responsive">
@@ -53,21 +53,6 @@
                                                 <td>{{$imports->quantity}}</td>
                                                 <td>{{$imports->price}}</td>
                                                 <td>{{$imports->clearance->name}}</td>
-                                                <td>
-{{--                                                    {{route('admin.maincategories.edit',$bank -> id)}}--}}
-                                                    <div class="btn-group" role="group"
-                                                         aria-label="Basic example">
-                                                        <a href="{{route('import.edit', $imports -> id)}}"
-                                                           class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
-{{--                                                        {{route('admin.maincategories.delete',$category -> id)}}--}}
-
-                                                        <a href="{{route('import.delete', $imports-> id)}}"
-                                                           class="btn btn-outline-danger btn-min-width box-shadow-3 mr-1 mb-1">حذف</a>
-
-
-
-                                                    </div>
-                                                </td>
 
                                             </tr>
 

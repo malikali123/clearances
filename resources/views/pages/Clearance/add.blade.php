@@ -33,20 +33,39 @@
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">اسم المخلص </label>
+                                <label for="title">اسم المخلص </label>
                                 <input type="text" value="" name="name" class="form-control">
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">التلفون </label>
+                                <label for="title">التلفون </label>
                                 <input type="text" value="" name="phon" class="form-control">
+                                @error('phon')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4"> الايميل </label>
+                                <label for="title"> الايميل </label>
                                 <input type="email" value="" name="email" class="form-control">
+                                @error('email')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4">الرقم الضريبي </label>
+                                <label for="title">الرقم الضريبي </label>
                                 <input type="text" value="" name="clearaneNumber" class="form-control">
+                                @error('clearaneNumber')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="col-md-6">
+                                <label for="title">كلمة المرور</label>
+                                <input type="password" name="Password" class="form-control">
+                                @error('Password')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
 
                         </div>

@@ -9,7 +9,7 @@ class Import extends Model
     protected $table = 'imports';
 
     protected $fillable = [
-        'value_id', 'decription', 'quantity', 'price', 'clearance_id',
+        'value_id', 'decription', 'quantity', 'price', 'total', 'amount', 'status', 'clearance_id',
 
 
     ];
@@ -25,6 +25,27 @@ class Import extends Model
     ];
 
 
+
+    public static $status_name = [
+        'غير مخلص',
+        ' مخلص',
+
+
+    ];
+
+    public function getStatus()
+    {
+        return Import::$status_name[$this->status];
+    }
+
+
+
+
+//    public function getStatus()
+//    {
+//        return Transform::$status_name[$this->status];
+//    }
+
     /**
      * Get the branch that owns the Bank
      *
@@ -38,6 +59,14 @@ class Import extends Model
     public function value()
     {
         return $this->belongsTo(Value::class, 'value_id', 'id');
+    }
+
+
+    public function getAmountAttribute($amount){
+
+        $amount= $this->total * $this->value->value / 100;
+        return $amount;
+
     }
 
     /**

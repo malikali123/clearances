@@ -37,7 +37,7 @@
 {{--                                <input type="text" value="" name="type" class="form-control">--}}
 {{--                            </div>--}}
                             <div class="form-group col-md-6">
-                                <label for="inputEmail4"> اختر صاحب الحساب
+                                <label for="inputEmail4"> اختر نوع البضاعه
                                 </label>
                                 <select name="value_id" class="select2 form-control">
                                     <optgroup label="من فضلك أختر صاحب الحساب ">
@@ -69,26 +69,28 @@
 {{--                                <label for="inputEmail4">المخلص </label>--}}
 {{--                                <input type="text" value="" name="clearance" class="form-control">--}}
 {{--                            </div>--}}
+                            <input type="number" hidden readonly value="{{auth()->user()->id }}" name="clearance" class="form-control">
 
-                            <div class="form-group col-md-6">
-                                    <label for="inputEmail4"> اختر االمخلص
-                                    </label>
-                                    <select name="clearance" class="select2 form-control">
-                                        <optgroup label="من فضلك أختر المخلص ">
-                                            @if($data && $data -> count() > 0)
-                                                @foreach($data as $clearance)
-                                                    <option
-                                                        value="{{$clearance -> id }}">{{$clearance -> name}}</option>
-                                                @endforeach
-                                            @endif
-                                        </optgroup>
-                                    </select>
+
+{{--                            <div class="form-group col-md-6">--}}
+{{--                                    <label for="inputEmail4"> اختر االمخلص--}}
+{{--                                    </label>--}}
+{{--                                    <select name="clearance" class="select2 form-control">--}}
+{{--                                        <optgroup label="من فضلك أختر المخلص ">--}}
+{{--                                            @if($data && $data -> count() > 0)--}}
+{{--                                                @foreach($data as $clearance)--}}
+{{--                                                    <option--}}
+{{--                                                        value="{{auth()->user()->id }}">{{auth()->user()->name}}</option>--}}
+{{--                                                @endforeach--}}
+{{--                                            @endif--}}
+{{--                                        </optgroup>--}}
+{{--                                    </select>--}}
 {{--                                    @error('parent_id')--}}
 {{--                                    <span class="text-danger"> {{$message}}</span>--}}
 {{--                                    @enderror--}}
 
 
-                            </div>
+{{--                            </div>--}}
 
 
                         </div>

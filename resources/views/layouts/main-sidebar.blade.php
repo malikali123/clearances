@@ -11,7 +11,7 @@
                 @include('layouts.main-sidebar.student-main-sidebar')
             @endif
 
-            @if (auth('teacher')->check())
+            @if (auth('clearance')->check())
                 @include('layouts.main-sidebar.teacher-main-sidebar')
             @endif
 

@@ -26,6 +26,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         $transactions = Transacsions::get();
         return $transactions;
@@ -35,6 +36,12 @@ class TransactionController extends Controller
 //        $account = Transacsions::get();
 //        return $account;
 //        return view('pages.Accounts.index', compact('account'));
+=======
+        //admin.bank
+        $transactions = Transacsions::with('values','imports')->get();
+        return $transactions;
+        return view('pages.Accounts.index', compact('transactions'));
+>>>>>>> 51622516fc93713d680c11b75a334908becaeb2f
     }
 
 
@@ -81,12 +88,20 @@ class TransactionController extends Controller
       // return $request;
 DB::beginTransaction();
 
+<<<<<<< HEAD
         $status = Import::find($request->import_id);
         $blance = Account::find($request->account_number);
 //return $d;
            $transaction = Transacsions::create([
             'import_id' => $request->import_id,
             'clearance_id' => $request->clearance,
+=======
+        // return $request->all();
+
+        $transaction = Transacsions::create([
+            'import_id' => $request->product_type,
+            'clearance_id' => $request->name,
+>>>>>>> 51622516fc93713d680c11b75a334908becaeb2f
             'account_id' => $request->account_number,
 //            'value_id' => $request->type,
             'amount' => $request->amount ,
@@ -112,7 +127,7 @@ DB::beginTransaction();
     //    $data =  $transaction->amount = values->product_type * imports->price/100;
       //  'amount' => $request->product_type * $request-> type/100 ,
 ///return $data;
-        return redirect()->route('admin.account')->with(['success' => 'تم ألتحديث بنجاح']);
+        return redirect()->route('admin.transactions')->with(['success' => 'تم ألتحديث بنجاح']);
 
         //return toastr()->success(trans('messages.success'));
         //return redirect()->route('admin.bank');

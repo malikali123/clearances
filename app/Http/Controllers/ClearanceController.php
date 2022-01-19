@@ -46,7 +46,7 @@ class ClearanceController extends Controller
     public function create()
     {
 
-        return view('pages.clearance.add');
+        return view('pages.Clearance.add');
     }
 
     /**

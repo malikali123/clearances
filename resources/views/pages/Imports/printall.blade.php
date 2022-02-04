@@ -43,7 +43,7 @@
                                                         <td>{{$imports->decription}}</td>
                                                         <td>{{$imports->quantity}}</td>
                                                         <td>{{$imports->price}}</td>
-                                                        <td>{{$imports->clearance->name}}</td>
+                                                        <td>{{$data->clearance ? $data->clearance->name : 'بدون' }}</td>
                                                         <td>{{$imports->total}}</td>
                                                         <td class="alert {{ $imports -> status == 1 ? 'alert-success' : 'alert-danger' }}" >{{$imports -> getStatus()}}</td>
 

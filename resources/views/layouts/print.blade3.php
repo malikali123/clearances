@@ -5,63 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta name="description"
-          content="وكالة الاندلس لتحاويل الاموال">
+          content="نظام التخليص الجمركي">
     <meta name="keywords"
-          content="الاندلس,تحويل الاموال,إرسال الاموال,التحاويل الداخلية,تحاويل خارج البنوك,الاموال,سرعة التحويل,إستلام الاموال,صرف الاموال">
+          content="تخليص بضا ئع وسيارات وجميع انواع الواردات">
     <meta name="author" content="PIXINVENT">
     <title>@yield('title')</title>
     <link rel="apple-touch-icon" href="{{ asset( 'storage/app/public/'.\App\Models\Setting::first()->LOGO ?? 'public/img/logo.png') }}">
     <link rel="shortcut icon" type="image/png" href="{{ asset( 'storage/app/public/'.\App\Models\Setting::first()->LOGO ?? 'public/img/logo.png') }}">
     {{--<link--}}
-        {{--href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"--}}
-        {{--rel="stylesheet">--}}
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/fonts.css')}}">
+    {{--href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Quicksand:300,400,500,700"--}}
+    {{--rel="stylesheet">--}}
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/fonts.css')}}">
 
     {{--<link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css"--}}
-          {{--rel="stylesheet">--}}
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/line-awesome/css/line-awesome.min.css')}}">
+    {{--rel="stylesheet">--}}
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/line-awesome/css/line-awesome.min.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/animate/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/plugins/animate/animate.css')}}">
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/core/colors/palette-gradient.css')}}">
 
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/vendors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/weather-icons/climacons.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/meteocons/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/charts/morris.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/charts/chartist.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/forms/selects/select2.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/vendors.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/weather-icons/climacons.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/meteocons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/charts/morris.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/charts/chartist.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/forms/selects/select2.min.css')}}">
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/vendors/css/charts/chartist-plugin-tooltip.css')}}">
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/vendors/css/forms/toggle/bootstrap-switch.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/forms/toggle/switchery.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/chat-application.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/forms/toggle/switchery.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/pages/chat-application.css')}}">
     <!-- END VENDOR CSS-->
     <!-- BEGIN MODERN CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/custom-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/app.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/custom-rtl.css')}}">
     <!-- END MODERN CSS-->
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/toastr.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/extensions/toastr.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/extensions/toastr.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/plugins/extensions/toastr.css')}}">
 
     <link rel="stylesheet" type="text/css"
           href="{{asset('assets/admin/css-rtl/core/menu/menu-types/vertical-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/fonts/simple-line-icons/style.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/pages/timeline.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/cryptocoins/cryptocoins.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/datedropper.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/extensions/timedropper.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/vendors/css/file-uploaders/dropzone.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/plugins/file-uploaders/dropzone.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/fonts/simple-line-icons/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/core/colors/palette-gradient.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/pages/timeline.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/cryptocoins/cryptocoins.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/extensions/datedropper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/extensions/timedropper.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendors/css/file-uploaders/dropzone.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/plugins/file-uploaders/dropzone.css')}}">
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css-rtl/style-rtl.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/admin/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css-rtl/style-rtl.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
     <!-- END Custom CSS-->
     @yield('style')
     {{--<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">--}}
@@ -107,7 +107,7 @@
             -moz-transform: translateX(4px);
             -ms-transform: translateX(4px);
             -o-transform: translateX(4px);
-             transform: translateX(4px);
+            transform: translateX(4px);
             color: #6f3005!important;
             background: #ffffff!important;
             -webkit-transform: translateX(3px);
@@ -184,7 +184,7 @@
 <script src="{{asset('assets/admin/vendors/js/charts/chart.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('assets/admin/vendors/js/charts/echarts/echarts.js')}}" type="text/javascript"></script>
 
-<script src="{{asset('assets/admin/vendors/js/extensions/datedropper.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('assets/admin/vendors/js/extensions/datedropper.min.j}" ts')}} type="text/javascript"></script>
 <script src="{{asset('assets/admin/vendors/js/extensions/timedropper.min.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('assets/admin/vendors/js/forms/icheck/icheck.min.js')}}" type="text/javascript"></script>

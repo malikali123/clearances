@@ -34,10 +34,23 @@ class Import extends Model
 
 
     ];
-
     public function getStatus()
     {
         return Import::$status_name[$this->status];
+    }
+
+
+
+    public static $status_name2 = [
+        'في الانتظار',
+        ' صالح',
+
+
+    ];
+
+    public function getStatus2()
+    {
+        return Import::$status_name2[$this->status];
     }
 
 

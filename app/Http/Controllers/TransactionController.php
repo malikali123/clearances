@@ -26,22 +26,19 @@ class TransactionController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
 
         $transactions = Transacsions::get();
-        return $transactions;
+        //return $transactions;
         return view('pages.Accounts.index', compact('transactions'));
 
 //        //admin.bank
 //        $account = Transacsions::get();
 //        return $account;
 //        return view('pages.Accounts.index', compact('account'));
-=======
         //admin.bank
         $transactions = Transacsions::with('values','imports')->get();
         return $transactions;
         return view('pages.Accounts.index', compact('transactions'));
->>>>>>> 51622516fc93713d680c11b75a334908becaeb2f
     }
 
 
@@ -58,6 +55,11 @@ class TransactionController extends Controller
     {
         $data = Import::find($id);
         return view('pages.imports.details', compact('data'));
+    }
+  public function printHelth($id)
+    {
+        $data = Import::find($id);
+        return view('pages.imports.helth_details', compact('data'));
     }
 
     /**
@@ -88,23 +90,22 @@ class TransactionController extends Controller
       // return $request;
 DB::beginTransaction();
 
-<<<<<<< HEAD
+
         $status = Import::find($request->import_id);
         $blance = Account::find($request->account_number);
 //return $d;
-           $transaction = Transacsions::create([
-            'import_id' => $request->import_id,
-            'clearance_id' => $request->clearance,
-=======
-        // return $request->all();
+//           $transaction = Transacsions::create([
+//            'import_id' => $request->import_id,
+//            'clearance_id' => $request->clearance,
+//
+//        // return $request->all();
 
         $transaction = Transacsions::create([
-            'import_id' => $request->product_type,
-            'clearance_id' => $request->name,
->>>>>>> 51622516fc93713d680c11b75a334908becaeb2f
+            'import_id' => $request->import_id,
+            'clearance_id' => $request->clearance,
             'account_id' => $request->account_number,
 //            'value_id' => $request->type,
-            'amount' => $request->amount ,
+            'amount' => $request->statement ,
             'statement' => $request->decription,
 
         ]);
@@ -165,6 +166,10 @@ DB::beginTransaction();
     public function payment($id)
     {
 
+        $status->update([
+            'status' => 1,
+            'amount' => $request->amount
+        ]);
         $import = Import::find($id) ;
         $account = Account::where([
             'clearance_id' => auth()->user()->id
@@ -175,6 +180,24 @@ DB::beginTransaction();
         //return $account;
         return view('pages.Transactions.payment', compact('import', 'account'));
  }
+
+
+    public function helth($id)
+    {
+        $status = Import::find($id);
+
+        $status->update([
+            'status' => 1,
+            //'amount' => $request->amount
+        ]);
+        $data = Import::where([
+            'value_id' => 5
+        ])->get();
+
+
+        return view('pages.Imports.helth', compact('data'));
+
+    }
 
 
     /**

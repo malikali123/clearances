@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Clearance;
 use App\Models\Import;
 use App\Models\Value;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -30,6 +31,16 @@ class ImportController extends Controller
         return view('pages.Imports.index', compact('data'));
     }
 
+    public function helth()
+    {
+        //admin.bank
+        $data = Import::where([
+            'value_id' => 5
+        ])->get();
+        //return $data;
+        return view('pages.Imports.helth', compact('data'));
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,10 +48,26 @@ class ImportController extends Controller
      */
     public function print()
     {
-        $values = Value::all();
+
         $data = Import::all();
-        return view('pages.bank.index', compact('data','values'));
+        return view('pages.Repots.import', compact('data'));
     }
+
+
+    public function certificate()
+    {
+
+        $data = Import::where([
+            'status' => 1
+        ])->get();
+       // return $data;
+        return view('pages.Imports.certificates', compact('data'));
+     }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -113,6 +140,16 @@ DB::beginTransaction();
         $data = Import::find($id);
         return view('pages.Imports.edit', compact('data','values'));
     }
+
+
+    public function certificated($id)
+    {
+        // $user = User::auth()->user()->id->get();
+        // return $user;
+        $data = Import::find($id);
+        return view('pages.Imports.print', compact('data'));
+    }
+
 
     /**
      * Update the specified resource in storage.

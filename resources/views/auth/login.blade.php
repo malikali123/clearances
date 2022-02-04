@@ -56,11 +56,7 @@ login-->
                 </div>
                 <div class="col-lg-4 col-md-6 bg-white">
                     <div class="login-fancy pb-40 clearfix">
-                        @if($type == 'student')
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول طالب</h3>
-                        @elseif($type == 'doctoor')
-                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل موظف الادويه والسموم  </h3>
-                        @elseif($type == 'clearance')
+                        @if($type == 'clearance')
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول المخلص</h3>
                         @else
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ادمن</h3>

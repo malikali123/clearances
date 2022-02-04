@@ -118,11 +118,8 @@ header start-->
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#"><i class="text-secondary ti-reload"></i>Activity</a>
-                <a class="dropdown-item" href="#"><i class="text-success ti-email"></i>Messages</a>
-                <a class="dropdown-item" href="#"><i class="text-warning ti-user"></i>Profile</a>
-                <a class="dropdown-item" href="#"><i class="text-dark ti-layers-alt"></i>Projects <span
-                        class="badge badge-info">6</span> </a>
+                 <a class="dropdown-item" href="{{ route('users.edit2', auth()->user()->id) }}"><i class="text-warning ti-user"></i>Edit Profile</a>
+
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
                 @if(auth('student')->check())

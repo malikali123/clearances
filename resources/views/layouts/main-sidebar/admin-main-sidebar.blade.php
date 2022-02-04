@@ -12,8 +12,7 @@
         <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{trans('main_trans.Programname')}} </li>
 
 {{--        المخلصين--}}
-
-
+        @can('imports')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Customs-broker-menu">
                 <div class="pull-left"><i class="fas fa-user-tie"></i><span
@@ -28,8 +27,27 @@
             </ul>
         </li>
 
+        @endcan
+
+
+        @can('users')
+        <li>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#user-broker-menu">
+                <div class="pull-left"><i class="fas fa-user-tie"></i><span
+                        class="right-nav-text">مستخدمي لوحة التحكم </span></div>
+                <div class="pull-right"><i class="ti-plus"></i></div>
+                <div class="clearfix"></div>
+            </a>
+            <ul id="user-broker-menu" class="collapse" data-parent="#sidebarnav">
+                <li> <a href="{{route('admin.users')}}">  عرض جميع المستخدمين </a> </li>
+                <li> <a href="{{route('users.create')}}"> اضافة مستخدم جديد  </a> </li>
+
+            </ul>
+        </li>
+        @endcan
 
         {{--البنوك--}}
+        @can('banks')
 
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Bank-menu">
@@ -45,12 +63,13 @@
             </ul>
         </li>
 
-
+        @endcan
 
 
         {{--
   ادخال وعرض النسب المئوية لاسعار الواردات
 --}}
+        @can('values')
 
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Values-menu">
@@ -66,10 +85,10 @@
             </ul>
         </li>
 
-
+        @endcan
 {{--        الدفع--}}
 
-        <li>
+        {{-- <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Payment-menu">
                 <div class="pull-left"><i class="fas fa-money"></i><span
                         class="right-nav-text">الدفع</span></div>
@@ -81,7 +100,8 @@
                 <li> <a href="{{route('transactions.create')}}"> اضافة دفعيه جديد  </a> </li>
 
             </ul>
-        </li>
+        </li> --}}
+
 
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#storage-menu">
@@ -91,7 +111,7 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="storage-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('admin.import')}}">  عرض المخزون  </a> </li>
+                <li> <a href="">  عرض المخزون  </a> </li>
 
 
             </ul>
@@ -106,28 +126,58 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="Certificate-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="">  عرض جميع الشهادات </a> </li>
-                <li> <a href=""> اضافة شهاده جديد  </a> </li>
-{{--                <i class="far fa-file-certificate"></i>--}}
-            </ul>
+                <li> <a href="{{route('admin.importqty')}}">  عرض جميع الشهادات </a> </li>
+                     </ul>
         </li>
 
 
-{{--        التقارير--}}
-
+@can('helth')
         <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Reports-menu">
-                <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
-                        class="right-nav-text"> التقارير </span></div>
+            <a href="javascript:void(0);" data-toggle="collapse" data-target="#helth-menu">
+                <div class="pull-left"><i class="far fa-file-certificate"></i><span
+                        class="right-nav-text">الادويه الوارد</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
-                <div class=""></div>
+                <div class="clearfix"></div>
             </a>
-            <ul id="Reports-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="">  عرض التقارير </a> </li>
-                <li> <a href=""> اضافة تقرير جديد  </a> </li>
-
+            <ul id="helth-menu" class="collapse" data-parent="#sidebarnav">
+                <li> <a href="{{route('helth.import')}}">  عرض جميع الادويه </a> </li>
             </ul>
         </li>
+        @endcan
+
+
+        {{--        التقارير--}}
+        @can('permession')
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Valuess-menu">
+                    <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
+                            class="right-nav-text">الصلاحيات</span></div>
+                    <div class="pull-right"><i class="ti-plus"></i></div>
+                    <div class="clearfix"></div>
+                </a>
+                <ul id="Valuess-menu" class="collapse" data-parent="#sidebarnav">
+                    <li> <a href="{{route('admin.roles.index')}}">  عرض الصلاحيات </a> </li>
+                    <li> <a href="{{route('admin.roles.create')}}">  اضافة صلاحيه جديد </a> </li>
+
+                </ul>
+            </li>
+
+
+{{--            <li>--}}
+{{--            <a href="javascript:void(0);" data-toggle="collapse" data-target="#roles-menu">--}}
+{{--                <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span--}}
+{{--                        class="right-nav-text"> الصلاحيات </span></div>--}}
+{{--                <div class="pull-right"><i class="ti-plus"></i></div>--}}
+{{--                <div class=""></div>--}}
+{{--            </a>--}}
+{{--            <ul id="roles-menu" class="collapse" data-parent="#sidebarnav">--}}
+{{--                <li> <a href="{{route('admin.roles.index')}}">   </a> </li>--}}
+{{--                <li> <a href="{{route('admin.roles.index')}}"> عرض الصلاحيات  </a> </li>--}}
+{{--                <li> <a href="{{route('admin.roles.create')}}"> اضافة صلاحيه جديد  </a> </li>--}}
+
+{{--            </ul>--}}
+{{--        </li>--}}
+        @endcan
         <!-- Attendance-->
 {{--        <li>--}}
 {{--            <a href="javascript:void(0);" data-toggle="collapse" data-target="#Attendance-icon">--}}
@@ -198,26 +248,29 @@
 
 
         <!-- Users-->
+        @can('report')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Users-icon">
-                <div class="pull-left"><i class="fas fa-users"></i><span class="right-nav-text">{{trans('main_trans.Users')}}</span></div>
+                <div class="pull-left"><i class="fas fa-users"></i><span class="right-nav-text">التقارير</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
             <ul id="Users-icon" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                <li> <a href="themify-icons.html">Themify icons</a> </li>
-                <li> <a href="weather-icon.html">Weather icons</a> </li>
+                <li> <a href="{{route('admin.roles.index')}}"> المخلصين </a> </li>
+                <li> <a href="{{route('admin.roles.index')}}">البنوك</a> </li>
+                <li> <a href="{{route('admin.roles.index')}}">الخزينه </a> </li>
+                <li> <a href="{{route('admin.roles.index')}}">الاكواد او التعريفات </a> </li>
             </ul>
         </li>
+        @endcan
 
 
         <!-- Settings-->
 
-        <li>
+        {{-- <li>
             <a href=""><i class="fas fa-cogs"></i><span class="right-nav-text">{{trans('main_trans.Settings')}} </span></a>
         </li>
-
+ --}}
 
     </ul>
 </div>

@@ -50,21 +50,20 @@ class Transacsions extends Model
         return $this->belongsTo(Account::class, 'account_id', 'id');
     }
 
-<<<<<<< HEAD
+
 //    public function getAmountAttribute($amount){
 //
 //        $amount= $this->imports->price * $this->imports->value->value / 100;
 //        return $amount;
 //
 //    }
-=======
+
     public function getAmountAttribute($amount){
 
         $amount= $this->imports->price * $this->imports->value->value / 100;
         return $amount;
 
     }
->>>>>>> 51622516fc93713d680c11b75a334908becaeb2f
 
     /**
      * Get all of the transactions for the Bank

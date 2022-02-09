@@ -32,7 +32,8 @@
                                             <th>#</th>
                                             <th>الاسم</th>
                                             <th>الايميل </th>
-                                            <th>الصلاحيه </th>
+                                            <th>التلفون </th>
+                                            <th>الرقم الضريبي </th>
                                             <th> العمليات </th>
 
                                         </tr>
@@ -44,8 +45,8 @@
                                             <tr>
                                                 <td>{{ $clearance->id}}</td>
                                                 <td>{{$clearance->name}}</td>
-                                                <td>{{$clearance->phon}}</td>
                                                 <td>{{$clearance->email}}</td>
+                                                <td>{{$clearance->phon}}</td>
                                                 <td>{{$clearance->clearaneNumber}}</td>
                                                 <td>
 {{--                                                    {{route('admin.maincategories.edit',$bank -> id)}}--}}
@@ -80,6 +81,32 @@
     <!-- row closed -->
 @endsection
 @section('js')
+    <div class="text-center">
+        <button onclick="print_page('#invoice')" class="btn btn-success">طباعة</button>
+    </div>
+@endsection
+@section('scripts')
+    <script>
+        function print_page(element){
+            var width = document.body.clientWidth;
+            var div_width = $(element).width();
+            console.log(width);
+            console.log(div_width);
+            $(element).css('z-index','1000')
+                .css('width',width+'px')
+                .css('position','absolute')
+                .css('top',0)
+                .css('right',0)
+
+            print()
+
+            location.reload()
+        }
+    </script>
+    <!--images-->
+
+
+
 {{--    @toastr_js--}}
 {{--    @toastr_render--}}
 @endsection

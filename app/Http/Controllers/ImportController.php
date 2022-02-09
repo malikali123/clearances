@@ -64,6 +64,29 @@ class ImportController extends Controller
         return view('pages.Imports.certificates', compact('data'));
      }
 
+    public function not_certificate()
+    {
+
+        $data = Import::where([
+            'clearance_id' => auth()->user()->id
+        ])->where([
+            'status' => 0
+        ])->get();
+       // return $data;
+        return view('pages.Imports.not_certificates', compact('data'));
+     }
+ public function certificate_clearance()
+    {
+
+        $data = Import::where([
+            'clearance_id' => auth()->user()->id
+        ])->where([
+            'status' => 1
+        ])->get();
+       // return $data;
+        return view('pages.Imports.not_certificates', compact('data'));
+     }
+
 
 
 
@@ -139,6 +162,21 @@ DB::beginTransaction();
 
         $data = Import::find($id);
         return view('pages.Imports.edit', compact('data','values'));
+    }
+
+ public function details_print1($id)
+    {
+        $values = Value::all();
+
+        $data = Import::find($id);
+        return view('pages.Imports.edit', compact('data','values'));
+    }
+
+
+    public function details_print($id)
+    {
+        $data = Import::find($id);
+        return view('pages.imports.details_print', compact('data'));
     }
 
 

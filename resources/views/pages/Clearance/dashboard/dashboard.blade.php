@@ -98,7 +98,7 @@
             <!-- Orders Status widgets-->
 
 
-           
+
 
             <livewire:calendar />
 
@@ -111,8 +111,8 @@
             @include('layouts.footer')
         </div><!-- main content wrapper end-->
     </div>
-    </div>
-    </div>
+
+
 
     <!--=================================
  footer -->

@@ -43,7 +43,7 @@ Route::group(
 
 
      //==============================Bank============================
-    Route::group(['prefix' => 'bank', 'middleware' => 'can:banks'], function () {
+    Route::group(['prefix' => 'bank', 'middleware' => 'can:التحكم باالبنوك'], function () {
         Route::get('/', 'BankController@index')->name('admin.bank');
         Route::get('create', 'BankController@create')->name('bank.create');
         Route::get('print', 'BankController@print')->name('bank.print');
@@ -71,7 +71,7 @@ Route::group(
 
 
         ################################## roles ######################################
-        Route::group(['prefix' => 'roles', 'middleware' => 'can:permession'], function () {
+        Route::group(['prefix' => 'roles', 'middleware' => 'can:التحكم باالصلاحيات'], function () {
             Route::get('/', 'RolesController@index')->name('admin.roles.index');
             Route::get('create', 'RolesController@create')->name('admin.roles.create');
             Route::post('store', 'RolesController@saveRole')->name('admin.roles.store');
@@ -80,10 +80,15 @@ Route::group(
          });
         ################################## end roles ######################################
 
-
+//    Route::resource('articles',ArticleController::class);
+//    Route::prefix('upload')->name('upload.')->group(function(){
+//        Route::post('/image',[HelperController::class,'upload_image'])->name('image');
+//        Route::post('/file',[HelperController::class,'upload_file'])->name('file');
+//        Route::post('/remove-file',[HelperController::class,'remove_files'])->name('remove-file');
+//    });
 
     //==============================clearance============================
-    Route::group(['prefix' => 'clearance', 'middleware' => 'can:imports'], function () {
+    Route::group(['prefix' => 'clearance', 'middleware' => 'can:التحكم باالمخلصين'], function () {
         Route::get('/', 'ClearanceController@index')->name('admin.clearance');
         Route::get('create', 'ClearanceController@create')->name('clearance.create');
         Route::get('print', 'BankCClearanceControllerontroller@print')->name('clearance.print');
@@ -98,7 +103,7 @@ Route::group(
 
 
     //==============================clearance============================
-    Route::group(['prefix' => 'users', 'middleware' => 'can:users'], function () {
+    Route::group(['prefix' => 'users', 'middleware' => 'can:التحكم  بمستخدمي النظام'], function () {
         Route::get('/', 'UserController@index')->name('admin.users');
         Route::get('create', 'UserController@create')->name('users.create');
         Route::get('print', 'UserController@print')->name('users.print');
@@ -117,7 +122,7 @@ Route::group(
 
 
     //==============================import============================
-    Route::group(['prefix' => 'import', 'middleware' => 'can:imports'], function () {
+    Route::group(['prefix' => 'import', 'middleware' => 'can:موظف الصحه'], function () {
         Route::get('/', 'ImportController@index')->name('admin.import');
         Route::get('helth', 'ImportController@helth')->name('helth.import');
         Route::get('importqty', 'ImportController@certificate')->name('admin.importqty');
@@ -138,7 +143,7 @@ Route::group(
 
 
     //==============================values============================
-    Route::group(['prefix' => 'values', 'middleware' => 'can:imports'], function () {
+    Route::group(['prefix' => 'values', 'middleware' => 'can:التحكم الاكواد او التعريفات'], function () {
         Route::get('/', 'ValueController@index')->name('admin.values');
         Route::get('create', 'ValueController@create')->name('values.create');
         Route::get('print', 'ValueController@print')->name('values.print');
@@ -152,7 +157,7 @@ Route::group(
 
 
     //==============================transactions============================
-    Route::group(['prefix' => 'transactions', 'middleware' => 'can:helth'], function () {
+    Route::group(['prefix' => 'transactions', 'middleware' => 'can:موظف الصحه'], function () {
         Route::get('/', 'TransactionController@index')->name('admin.transactions');
         Route::get('helth', 'TransactionController@index')->name('helth.transactions');
         Route::get('create', 'TransactionController@create')->name('transactions.create');
@@ -170,7 +175,7 @@ Route::group(
     #########################################  end transactions rote #######################################
 
     //==============================Report============================
-    Route::group(['prefix' => 'Report', 'middleware' => 'can:reports'], function () {
+    Route::group(['prefix' => 'Report', 'middleware' => 'can:التحكم بالتقارير'], function () {
         Route::get('impotr', 'ImportController@index')->name('admin.transactions');
         Route::get('banks', 'TransactionController@create')->name('transactions.create');
         Route::get('codes', 'ValueController@print')->name('transactions.print');
@@ -194,4 +199,8 @@ Route::group(
     //==============================Setting============================
     Route::resource('settings', 'SettingController');
 });
+
+
+
+
 

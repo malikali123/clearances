@@ -182,7 +182,7 @@ DB::beginTransaction();
             $user = User ::find($id);
 
             if (!$user)
-                return redirect()->route('admin.users')->with(['error' => 'هذا الماركة غير موجود ']);
+                return redirect()->route('admin.users')->with(['error' => 'هذا المستخدم غير موجود ']);
 
             $user->delete();
 

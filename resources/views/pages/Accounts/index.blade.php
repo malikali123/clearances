@@ -45,7 +45,7 @@
                                             <tr>
                                                 <td>{{ $accounts->id}}</td>
                                                 <td>{{$accounts->clearance->name}}</td>
-                                                <td>{{$accounts->banks->bank_name}}</td>
+                                                <td>{{$accounts->banks->bank_name  ?? 'تم حذف هذاالبنك' }}</td>
                                                 <td>{{$accounts->accountNumber}}</td>
                                                 <td>{{$accounts->balance}}</td>
 

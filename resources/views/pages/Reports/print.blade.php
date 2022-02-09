@@ -12,7 +12,7 @@
                                 <h4 class="text-center">تقرير راس مال الفروع</h4>
                             </div>
 
-                            <div class="card-content collapse show">
+                            <div class= "card-content collapse show">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-hover">
                                         <thead>

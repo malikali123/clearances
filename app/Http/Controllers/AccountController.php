@@ -137,10 +137,10 @@ DB::beginTransaction();
             DB::commit();
             return redirect()->route('admin.account')->with(['success' => 'تم ألتحديث بنجاح']);
         }catch(\Exception $ex){
-            //return $ex;
+            return $ex;
             DB::rollback();
             Log::error($ex);
-            return redirect()->back()->with(['error' => 'عفواً . حدثت مشكلة الرجاء المحاولة لاحقاً .'])->withInput();
+            return redirect()->route('admin.account')->with(['error' => 'عفواً . حدثت مشكلة الرجاء المحاولة لاحقاً .'])->withInput();
         }
     }
 

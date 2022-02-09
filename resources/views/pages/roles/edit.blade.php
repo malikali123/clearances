@@ -48,7 +48,7 @@
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-home"></i> البيانات الاساسية للصلاحية </h4>
                                                 <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-12">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> اسم الصلاحية
                                                             </label>
@@ -78,10 +78,7 @@
                                                         </div>
                                             </div>
                                             <div class="form-actions">
-                                                <button type="button" class="btn btn-warning mr-1"
-                                                        onclick="history.back();">
-                                                    <i class="ft-x"></i> تراجع
-                                                </button>
+                                                
                                                 <button type="submit" class="btn btn-primary">
                                                     <i class="la la-check-square-o"></i> تحديث
                                                 </button>

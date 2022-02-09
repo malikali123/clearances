@@ -1,20 +1,33 @@
-@extends('layouts.print')
-@section('title','_')
+@extends('layouts.master')
+@section('css')
+    @toastr_css
+@section('title')
+    تفاصيل الشهادات الوارده
+@stop
+@endsection
+@section('page-header')
+    <!-- breadcrumb -->
+@section('PageTitle')
+    تفاصيل الشهادات الوارده
+@stop
+<!-- breadcrumb -->
+@endsection
 @section('content')
-    <div class="app-content content">
-        <div class="content-wrapper pt-0">
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-12 mb-30">
+            <div class="card card-statistics h-100">
+                <div class="card-body">
+                    <div class="col-xl-12 mb-30">
+                        <div class="card card-statistics h-100">
+                            <div class="card-body">
+                                 <a target="_blank" href="{{route('import.print')}}" class="btn btn-outline-success float-right">طباعة <i class="la la-print"></i> </a>
 
-            <div class="content-body">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="text-center">   شهادة الوارد </h4>
-                            </div>
-
-                            <div class="card-content collapse show">
+                                <br><br>
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-hover">
+                                    <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
+                                           data-page-length="50"
+                                           style="text-align: center">
 
 
                                         <tbody>
@@ -26,7 +39,7 @@
 
                                         </tr>
                                         <tr>
-{{--                                            $data->clearance ? $data->clearance->name : 'بدون'--}}
+                                            {{--                                            $data->clearance ? $data->clearance->name : 'بدون'--}}
                                             <th>إسم المخلص </th>
                                             <td>{{  $data->clearance ? $data->clearance->name : 'بدون' }}</td>
                                         </tr>
@@ -71,4 +84,9 @@
             </div>
         </div>
     </div>
+    <!-- row closed -->
+@endsection
+@section('js')
+    {{--    @toastr_js--}}
+    {{--    @toastr_render--}}
 @endsection

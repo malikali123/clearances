@@ -51,13 +51,13 @@
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Payment-menu">
                 <div class="pull-left"><i class="fas fa-money"></i><span
-                        class="right-nav-text">تخليص واردات</span></div>
+                        class="right-nav-text">فرز الواردات</span></div>
                 <div class="pull-right"><i class="ti-plus"></i></div>
                 <div class="clearfix"></div>
             </a>
             <ul id="Payment-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('admin.transactions')}}">  عرض البضائع المخلصه </a> </li>
-                <li> <a href=""> اضافة دفعيه جديد  </a> </li>
+                <li> <a href="{{route('admin.certificate_clearance.clearance')}}">  عرض البضائع المخلصه </a> </li>
+                <li> <a href="{{route('admin.not_certificate.clearance')}}"> بضائع في انتظار الدفع </a> </li>
 
             </ul>
         </li>

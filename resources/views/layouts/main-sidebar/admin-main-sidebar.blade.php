@@ -12,7 +12,7 @@
         <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{trans('main_trans.Programname')}} </li>
 
 {{--        المخلصين--}}
-        @can('imports')
+        @can('التحكم باالمخلصين')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Customs-broker-menu">
                 <div class="pull-left"><i class="fas fa-user-tie"></i><span
@@ -30,7 +30,7 @@
         @endcan
 
 
-        @can('users')
+        @can('التحكم  بمستخدمي النظام')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#user-broker-menu">
                 <div class="pull-left"><i class="fas fa-user-tie"></i><span
@@ -47,7 +47,7 @@
         @endcan
 
         {{--البنوك--}}
-        @can('banks')
+        @can('التحكم باالبنوك')
 
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Bank-menu">
@@ -69,7 +69,7 @@
         {{--
   ادخال وعرض النسب المئوية لاسعار الواردات
 --}}
-        @can('values')
+        @can('التحكم الاكواد او التعريفات')
 
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Values-menu">
@@ -103,19 +103,19 @@
         </li> --}}
 
 
-        <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#storage-menu">
-                <div class="pull-left"><i class="fas fa-money"></i><span
-                        class="right-nav-text">المخزن</span></div>
-                <div class="pull-right"><i class="ti-plus"></i></div>
-                <div class="clearfix"></div>
-            </a>
-            <ul id="storage-menu" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="">  عرض المخزون  </a> </li>
+{{--        <li>--}}
+{{--            <a href="javascript:void(0);" data-toggle="collapse" data-target="#storage-menu">--}}
+{{--                <div class="pull-left"><i class="fas fa-money"></i><span--}}
+{{--                        class="right-nav-text">المخزن</span></div>--}}
+{{--                <div class="pull-right"><i class="ti-plus"></i></div>--}}
+{{--                <div class="clearfix"></div>--}}
+{{--            </a>--}}
+{{--            <ul id="storage-menu" class="collapse" data-parent="#sidebarnav">--}}
+{{--                <li> <a href="">  عرض المخزون  </a> </li>--}}
 
 
-            </ul>
-        </li>
+{{--            </ul>--}}
+{{--        </li>--}}
 
 {{--        شهادة الوارد--}}
         <li>
@@ -131,7 +131,7 @@
         </li>
 
 
-@can('helth')
+@can('موظف الصحه')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#helth-menu">
                 <div class="pull-left"><i class="far fa-file-certificate"></i><span
@@ -147,7 +147,7 @@
 
 
         {{--        التقارير--}}
-        @can('permession')
+        @can('التحكم باالصلاحيات')
             <li>
                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#Valuess-menu">
                     <div class="pull-left"><i class="fas fa-money-bill-wave-alt"></i><span
@@ -248,7 +248,7 @@
 
 
         <!-- Users-->
-        @can('report')
+        @can('التحكم بالتقارير')
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#Users-icon">
                 <div class="pull-left"><i class="fas fa-users"></i><span class="right-nav-text">التقارير</span></div>
@@ -256,10 +256,10 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="Users-icon" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('admin.roles.index')}}"> المخلصين </a> </li>
-                <li> <a href="{{route('admin.roles.index')}}">البنوك</a> </li>
-                <li> <a href="{{route('admin.roles.index')}}">الخزينه </a> </li>
-                <li> <a href="{{route('admin.roles.index')}}">الاكواد او التعريفات </a> </li>
+                <li> <a href=""> المخلصين </a> </li>
+                <li> <a href="">البنوك</a> </li>
+                <li> <a href="">الخزينه </a> </li>
+                <li> <a href="">الاكواد او التعريفات </a> </li>
             </ul>
         </li>
         @endcan

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth:clearance', 'prefix' => 'clearance']
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth:clearance']
     ], function () {
 
     //==============================dashboard============================
@@ -43,8 +43,13 @@ Route::group(
     //==============================import============================
     Route::group(['prefix' => 'import'], function () {
         Route::get('/', 'ImportController@index')->name('admin.import');
+        Route::get('importqty', 'ImportController@certificate')->name('admin.importqty.clearance');
+        Route::get('not_certificate', 'ImportController@not_certificate')->name('admin.not_certificate.clearance');
+        Route::get('certificate_clearance', 'ImportController@certificate_clearance')->name('admin.certificate_clearance.clearance');
+
         Route::get('create', 'ImportController@create')->name('import.create');
         Route::get('print', 'ImportController@print')->name('import.print');
+        Route::get('details_print/{id}', 'ImportController@details_print')->name('import.details_print');
         Route::post('store', 'ImportController@store')->name('import.store');
         Route::get('edit/{id}', 'ImportController@edit')->name('import.edit');
         Route::get('payment/{id}', 'TransactionController@payment')->name('transactions.payment');
@@ -60,7 +65,7 @@ Route::group(
         Route::get('/', 'TransactionController@index')->name('admin.transactions');
         Route::get('create', 'TransactionController@create')->name('transactions.create');
         Route::get('print/{id}', 'TransactionController@print')->name('transactions.print');
-        Route::post('store', 'TransactionController@store')->name('transactions.store');
+        Route::post('store', 'TransactionController@store')->name('transactions.store.clearance');
         Route::get('edit/{id}', 'TransactionController@edit')->name('transactions.edit');
         Route::get('payment/{id}', 'TransactionController@payment')->name('transactions.payment');
         Route::post('update/{value}', 'TransactionController@update')->name('transactions.update');

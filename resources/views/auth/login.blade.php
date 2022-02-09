@@ -45,9 +45,8 @@ login-->
                 <div class="col-lg-4 col-md-6 login-fancy-bg bg"
                      style="background-image: url('{{ asset('assets/images/login-inner-bg.jpg')}}');">
                     <div class="login-fancy">
-                        <h2 class="text-white mb-20">Hello world!</h2>
-                        <p class="mb-20 text-white">Create tailor-cut websites with the exclusive multi-purpose
-                            responsive template along with powerful features.</p>
+                        <h2 class="text-white mb-20"> تسجيل الدخول لنظام الجمارك !</h2>
+                        <p class="mb-20 text-white">customs clearances system</p>
                         <ul class="list-unstyled  pos-bot pb-30">
                             <li class="list-inline-item"><a class="text-white" href="#"> Terms of Use</a> </li>
                             <li class="list-inline-item"><a class="text-white" href="#"> Privacy Policy</a></li>
@@ -61,6 +60,9 @@ login-->
                         @else
                             <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل دخول ادمن</h3>
                         @endif
+                        @if(Session::has('error'))
+                            <div class="alert alert-danger">{{ Session::get('error') }}</div>
+                            @endif
                         <form method="POST" action="{{route('login')}}">
                             @csrf
 

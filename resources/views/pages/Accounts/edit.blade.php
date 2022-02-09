@@ -70,6 +70,7 @@
 
 {{--                            </div>--}}
 
+                            <input type="number" hidden required value="{{auth()->user()->id}}" name="clearance" class="form-control">
 
 
                             <div class="form-group col-md-6">

@@ -21,9 +21,7 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('import.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">اضافة واردات جديد</a>
-                                <a target="_blank" href="{{route('import.print')}}" class="btn btn-outline-success float-right">طباعة <i class="la la-print"></i> </a>
+                               <a target="_blank" href="{{route('import.details_print', $data->id)}}" class="btn btn-outline-success float-right">طباعة <i class="la la-print"></i> </a>
 
                                 <br><br>
                                 <div class="table-responsive">
@@ -41,8 +39,13 @@
                                         <tr>
                                             {{--                                            $data->clearance ? $data->clearance->name : 'بدون'--}}
                                             <th>إسم المخلص </th>
-                                            <td>{{ $data->clearance->name }}</td>
+                                            <td>{{  $data->clearance ? $data->clearance->name : 'بدون' }}</td>
                                         </tr>
+{{--                                        <tr>--}}
+{{--                                            --}}{{--                                            $data->clearance ? $data->clearance->name : 'بدون'--}}
+{{--                                            <th>رقم حساب المخلص </th>--}}
+{{--                                            <td>{{  $data->account ? $data->account->name : 'بدون' }}</td>--}}
+{{--                                        </tr>--}}
                                         <tr>
                                             <th>الوصف </th>
                                             <td>{{ $data->decription }}</td>

@@ -87,7 +87,7 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
 
-      // return $request;
+       //return $request;
 DB::beginTransaction();
 
 
@@ -98,14 +98,14 @@ DB::beginTransaction();
 //            'import_id' => $request->import_id,
 //            'clearance_id' => $request->clearance,
 //
-//        // return $request->all();
+      //   return $request->all();
 
         $transaction = Transacsions::create([
             'import_id' => $request->import_id,
             'clearance_id' => $request->clearance,
             'account_id' => $request->account_number,
-//            'value_id' => $request->type,
-            'amount' => $request->statement ,
+           //'value_id' => $request->type,
+           // 'amount' => $request->statement ,
             'statement' => $request->decription,
 
         ]);
@@ -128,7 +128,7 @@ DB::beginTransaction();
     //    $data =  $transaction->amount = values->product_type * imports->price/100;
       //  'amount' => $request->product_type * $request-> type/100 ,
 ///return $data;
-        return redirect()->route('admin.transactions')->with(['success' => 'تم ألتحديث بنجاح']);
+        return redirect()->route('admin.import')->with(['success' => 'تم ألتحديث بنجاح']);
 
         //return toastr()->success(trans('messages.success'));
         //return redirect()->route('admin.bank');
@@ -165,11 +165,11 @@ DB::beginTransaction();
 
     public function payment($id)
     {
-
-        $status->update([
-            'status' => 1,
-            'amount' => $request->amount
-        ]);
+//        $status =$id;
+//        $status->update([
+//            'status' => 1,
+//            'amount' => $request->amount
+//        ]);
         $import = Import::find($id) ;
         $account = Account::where([
             'clearance_id' => auth()->user()->id

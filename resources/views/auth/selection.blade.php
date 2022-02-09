@@ -41,13 +41,13 @@
 {{--                                <a class="btn btn-default col-lg-3" title="طالب" href="{{route('login.show','student')}}">--}}
 {{--                                    <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/student.png')}}">--}}
 {{--                                </a>--}}
-                                <a class="btn btn-default col-lg-4" title=" موظف الادويه والسموم " href="{{route('login.show','doctoor')}}">
-                                    <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/parent.png')}}">
-                                </a>
-                                <a class="btn btn-default col-lg-4" title="مخلص جمركي" href="{{route('login.show','clearance')}}">
+{{--                                <a class="btn btn-default col-lg-6" title=" موظف الادويه والسموم " href="{{route('login.show','doctoor')}}">--}}
+{{--                                    <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/parent.png')}}">--}}
+{{--                                </a>--}}
+                                <a class="btn btn-default col-lg-6" title="مخلص جمركي" href="{{route('login.show','clearance')}}">
                                     <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/teacher.png')}}">
                                 </a>
-                                <a class="btn btn-default col-lg-4" title="ادمن" href="{{route('login.show','admin')}}">
+                                <a class="btn btn-default col-lg-6" title="ادمن" href="{{route('login.show','admin')}}">
                                     <img alt="user-img" width="100px;" src="{{URL::asset('assets/images/admin.png')}}">
                                 </a>
                             </div>
